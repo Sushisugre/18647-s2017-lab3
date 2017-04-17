@@ -7,7 +7,7 @@
  * Device Parameters
  */
 
-#define DEVICE_ID "PDue0002"    // use this to uniquely identify your device (max of 8 characters)
+#define DEVICE_ID "S401"    // use this to uniquely identify your device (max of 8 characters)
 
 /*
  * Application Parameters
@@ -16,7 +16,7 @@
 // TODO: Update these values to the proper network / server IP
 #define WIFI_SSID "PowerDue"
 #define WIFI_PASS "powerdue"
-#define SERVER_IP "10.230.12.47"  // typically the IP of your Laptop (e.g. "10.230.12.1")
+#define SERVER_IP "10.230.12.25"  // typically the IP of your Laptop (e.g. "10.230.12.1")
 
 /*
  * Clock parameters
@@ -45,13 +45,15 @@
  */
  
 // TODO: Modify the parameters below to suit your application needs
-#define ADC_SAMPLE_RATE 50000    // Sampling Rate in Hz of the ADC Sampler
+//#define ADC_SAMPLE_RATE 40000    // Sampling Rate in Hz of the ADC Sampler
+#define ADC_SAMPLE_RATE 20000    // Sampling Rate in Hz of the ADC Sampler
+
 
 #define NUM_BUFFERS   4         // How many buffers should the ADC Sampler keep track of?
 
 #define BUFFER_SIZE   256       // How many samples per buffer should the DMA fill up
 
-#define BUFFERS_TO_SEND 4       // How many buffers to send to the visualizer
+#define BUFFERS_TO_SEND 8       // How many buffers to send to the visualizer
 
 /*
  * ADCTrigger parameters
@@ -59,7 +61,7 @@
  
 #define WINDOW_COUNT 8          // How many signal windows to keep track of
 #define MIN_WINDOW_COUNT 24     // How many signal windows to ignore on start up before enabling triggering
-#define TRIGGER_DEFAULT_STD_DISTANCE   20.0f  // default std distance from mean to consider an event
+#define TRIGGER_DEFAULT_STD_DISTANCE   15.0f  // default std distance from mean to consider an event
 
 /*
  * Do not modify the following parameters

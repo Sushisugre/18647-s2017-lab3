@@ -121,8 +121,8 @@ void BufferHandlerTask(void *arg){
           // add NTP information to allow estimation of errors offline
           capturedEvent[currPacket].clockOffset = ADCClock.getOffset();
           capturedEvent[currPacket].networkDelay = ADCClock.getNetworkDelay();
-          
-          // capture the previous buffer into the packet
+
+           // capture the previous buffer into the packet
           memcpy( 
                   &(capturedEvent[currPacket].samples[BUFFER_SIZE * (BUFFERS_TO_SEND-bufCount)]), 
                   (uint8_t *)ADCSampler.getBufferAtIndex(ind),
@@ -233,14 +233,14 @@ void startTasks(void){
 }
 
 void setup(){
-  
 #if DEBUG
   // only needed when debug is turned on
   // most likely not needed when already deployed
   SerialUSB.begin(0);
   while(!SerialUSB);
 #endif
-  
+//    SerialUSB.println("test");
+
   initPins();
   initPacket();
   initQueues();
